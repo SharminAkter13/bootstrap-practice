@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cards with Fade Effect</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .card-container {
+            display: flex;
+            gap: 20px; /* Adjust spacing between cards */
+        }
+
+        .card {
+            position: relative;
+            overflow: hidden;
+            border: none; /* Remove default card border */
+        }
+
+        .card-img-overlay {
+            background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.7)); /* Fade effect overlay */
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 20px;
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.3s ease-in-out; /* Smooth fade transition */
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .card:hover .card-img-overlay {
+            opacity: 1; /* Show overlay on hover */
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 0.9rem;
+            color: #ccc;
+            margin-bottom: 10px;
+        }
+
+        .discover-button {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: pointer;
+            align-self: flex-start;
+        }
+
+        .discover-button:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .card-image {
+            display: block; /* Prevent extra space below image */
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="card-container">
+            <div class="card" style="width: 500px;">
+                <img src="https://i.ibb.co/809b44L/left-card.png" class="card-image" alt="New Arrivals">
+                <div class="card-img-overlay d-flex flex-column justify-content-end">
+                    <h6 class="card-subtitle">Collections</h6>
+                    <h3 class="card-title">NEW ARRIVALS</h3>
+                    <button class="discover-button">DISCOVER <span aria-hidden="true">&rarr;</span></button>
+                </div>
+            </div>
+
+            <div class="card" style="width: 500px;">
+                <img src="https://i.ibb.co/0mP0T4g/right-card.png" class="card-image" alt="Ferrari Collectibles">
+                <div class="card-img-overlay d-flex flex-column justify-content-end" style="background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 0.9));">
+                    <h6 class="card-subtitle">Magazine</h6>
+                    <h3 class="card-title">FERRARI COLLECTIBLES</h3>
+                    <button class="discover-button">DISCOVER <span aria-hidden="true">&rarr;</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
